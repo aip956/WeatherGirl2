@@ -1,103 +1,85 @@
 
-// const $currtemp = $('#currtemp');
-// const $currindex = $('#currindex');
-// const $currdesc = $('#currdesc');
-// const $input = $('input[type="text"]');
-// const $histtempmax = $('#histtempmax');
-// const $histtempmin = $('#histtempmin');
-// const $histdesc = $('#histdesc');
-// const $dateinput = $('input[type="date"]');
-// const $futuretempmax = $('#futuretempmax');
-// const $futuretempmin = $('#futuretempmin');
-// const $futureindex = $('#futureindex');
-// const $futuredesc = $('#futuredesc');
-// const $inputdate = $('input[type="date"]');
+const $currtemp = $('#currtemp');
+const $currindex = $('#currindex');
+const $currdesc = $('#currdesc');
+const $input = $('input[type="text"]');
+const $histtempmax = $('#histtempmax');
+const $histtempmin = $('#histtempmin');
+const $histdesc = $('#histdesc');
+const $dateinput = $('input[type="date"]');
+const $futuretempmax = $('#futuretempmax');
+const $futuretempmin = $('#futuretempmin');
+const $futureindex = $('#futureindex');
+const $futuredesc = $('#futuredesc');
+const $inputdate = $('input[type="date"]');
 
-
+const yesterday = () => {
+  let d = new Date();
+  d.setDate(d.getDate() - 1);
+  return d.toISOString().split('T')[0];
+};
 
 
 // Current weather
-// $.ajax({
-//     url:`http://api.weatherapi.com/v1/current.json?key=94b59f94d0124a6cbe831027212608&q=New York&aqi=no`
-// }).then(
-//    function(data){
-//    console.log(data);
-//    $currtemp.text(data.current.temp_f);
-//    $currindex.text(data.current.feelslike_f);
-//    $currdesc.text(data.current.condition.text);
-//    },
-   
-//    function(error){
-//     console.log("oops, something didn't work", error);
-//   }
-// )
+function handleGetData(event) {
+  event.preventDefault();
 
+$.ajax({
+    url:`http://api.weatherapi.com/v1/current.json?key=94b59f94d0124a6cbe831027212608&q=${$input.val()}&aqi=no`
+}).then(
+   function(data){
+   console.log(data);
+   $currtemp.text(data.current.temp_f);
+   $currindex.text(data.current.feelslike_f);
+   $currdesc.text(data.current.condition.text);
+   },
+   
+   function(error){
+    console.log("oops, something didn't work", error);
+  }
+);}
+// Add event listener when clicked, run handleGetData
+    $('form').on('submit',handleGetData)
    
 // Historical weather
 
-// $.ajax({
-//   url:`http://api.weatherapi.com/v1/history.json?key=94b59f94d0124a6cbe831027212608&q=New York&dt=2021-08-22`
-// }).then(
-//  function(data){
-//  console.log(data);
-//  $histtempmax.text(data.forecast.forecastday[0].day.maxtemp_f);
-//  $histtempmin.text(data.forecast.forecastday[0].day.mintemp_f);
-//  $histdesc.text(data.forecast.forecastday[0].day.condition.text);
-//  },
+$.ajax({
+  url:`http://api.weatherapi.com/v1/history.json?key=94b59f94d0124a6cbe831027212608&q=${$input.val()}&dt=yesterday()`
+}).then(
+ function(data){
+ console.log(data);
+ $histtempmax.text(data.forecast.forecastday[0].day.maxtemp_f);
+ $histtempmin.text(data.forecast.forecastday[0].day.mintemp_f);
+ $histdesc.text(data.forecast.forecastday[0].day.condition.text);
+ },
  
-//  function(error){
-//   console.log("oops, something didn't work", error);
-// }
-// )
+ function(error){
+  console.log("oops, something didn't work", error);
+}
+)
 
 // Forecast
-// $.ajax({
-//   url:`http://api.weatherapi.com/v1/forecast.json?key=94b59f94d0124a6cbe831027212608&q=New%20York&days=5&aqi=no&alerts=no`
-// }).then(
-//  function(data){
-//  console.log(data);
-//  $futuretempmax.text(data.forecast.forecastday[0].day.maxtemp_f);
-//  $futuretempmin.text(data.forecast.forecastday[0].day.mintemp_f);
-//  $futureindex.text(data.forecast.forecastday[0].hour[0].feelslike_f);
-//  $futuredesc.text(data.forecast.forecastday[0].day.condition.text);
-//  },
+$.ajax({
+  url:`http://api.weatherapi.com/v1/forecast.json?key=94b59f94d0124a6cbe831027212608&q=${$input.val()}&days=5&aqi=no&alerts=no`
+}).then(
+ function(data){
+ console.log(data);
+ $futuretempmax.text(data.forecast.forecastday[1].day.maxtemp_f);
+ $futuretempmin.text(data.forecast.forecastday[1].day.mintemp_f);
+ $futureindex.text(data.forecast.forecastday[1].hour[0].feelslike_f);
+ $futuredesc.text(data.forecast.forecastday[1].day.condition.text);
+ },
  
-//  function(error){
-//   console.log("oops, something didn't work", error);
-// }
-// )
+ function(error){
+  console.log("oops, something didn't work", error);
+}
+)
 /////////////////////////////////////////////////////////
 
 
 // Carousel Functions
-// let slideIndex = 1;
-// showSlides(slideIndex);
 
-// Next/previous controls
-// function plusSlides(n) {
-//   showSlides(slideIndex += n);
-// }
-
-// Thumbnail image controls
-// function currentSlide(n) {
-//   showSlides(slideIndex = n);
-// }
-
-// function showSlides(n) {
-// let i=1;
-// let slides = document.getElementsByClassName("mySlides");
-// let dots = document.getElementsByClassName("dot")
-// if (n > slides.length) {slideIndex = 1}
-// if (n < 1) {slideIndex = slides.length}
-// for (i = 0; i < slides.length; i++) {
-//   slides[i].getElementsByClassName.display = "none";
-// }
-// for (i = 0; i < dots.length; i++) {
-//   dots[i].className = dots[i].className.replace(" active", "");
-//   }
-//   slides[slideIndex-1].style.display = "block";
-//   dots[slideIndex-1].className += " active";
-// }
+// 
 
 
 
