@@ -69,19 +69,36 @@
 
 
 .textbox {
-
-
-}
+    margin: 30px;
+    background-color: black;
+    border: none;
+    opacity: 0.2;
+  }
 
 .text {
     color: #f2f2f2;
     font-size: 40px;
+    font-weight: 500;
     position: absolute;
     width: 100%;
     text-align: center;
     top: 50%;
     -ms-transform: translate(-50%);
     transform: translateY(-50%);
+    background-color: rgb(0,0,0,0.5);
+}
+
+.text_clouds {
+    color: #f2f2f2;
+    font-size: 40px;
+    font-weight: 500;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 50%;
+    -ms-transform: translate(-50%);
+    transform: translateY(-50%);
+    background-color: rgb(0,0,0,0.1);
 }
 
 .Slide_title {
