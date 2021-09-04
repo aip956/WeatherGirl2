@@ -41,8 +41,7 @@
             <div class="text">
                 <div class="Slide_title">Tomorrow's Weather Forecast</div>
                 <form>
-                    <input type="date" placeholder="Enter A Date">
-                    <input type="submit" value="Click Here">
+                  
                 </form>
             <p>Forecasted Temperature, High: <span id = "futuretempmax"></span>&#x2109;</p>
     <p>Forecasted Temperature, Low: <span id = "futuretempmin"></span>&#x2109;</p>
@@ -54,7 +53,17 @@
 
     <div class = "carousel_item">
         <div class="text">
-            <div class="Slide_title">Weather Before</div>
+              <!-- <input type="date" placeholder="Enter A Date"> -->
+                    
+
+                    <input type="date" name="begin"
+                    placeholder="dd-mm-yyyy" value=""
+                    min="1997-01-01" max="2030-12-31"> 
+                    <input type="submit" value="Click Here">
+
+
+
+
         <p>Historic Max Temperature: <span id = "histtempmax"></span>&#x2109;</p>
 <p>Historic Min Temperature: <span id = "histtempmin"></span>&#x2109;</p>
 <p>Conditions Were: <span id = "histdesc"></span></p>

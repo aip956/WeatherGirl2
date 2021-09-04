@@ -42,9 +42,10 @@ $.ajax({
     $('form').on('submit',handleGetData)
    
 // Historical weather
+// http://api.weatherapi.com/v1/history.json?key=&q=dallas&dt=2010-01-01
 
 $.ajax({
-  url:`http://api.weatherapi.com/v1/history.json?key=94b59f94d0124a6cbe831027212608&q=${$input.val()}&dt=yesterday()`
+  url:`http://api.weatherapi.com/v1/history.json?key=94b59f94d0124a6cbe831027212608&q=dallas&dt=${$inputdate.val()}`
 }).then(
  function(data){
  console.log(data);
