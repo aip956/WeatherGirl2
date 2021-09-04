@@ -1,4 +1,4 @@
-
+I had trouble with my git repository, so there are two repos. There is also a gap in saving my work to my repo. I had intended originally for my backgrounds to be mp4s, but these were too large. I had deployed to my original git "WeatherGirl". As I added more functionality, I was unable to save my work. I deleted the mp4 files from my VS Code, but the repository already had the mp4s and would not save my work. Alex recommended I create another repo, and it's now WeatherGirl2.
 
 Create basic function
 API from Weather API
@@ -7,10 +7,10 @@ History endpoint: Works
 Future endpoint: Works
 
 Landing page has present weather
-video background
+video background --> Could not save with mp4s, so needed to use jpegs
 Nice font: Raleway
 Add city in center page? Carries to other pages?
-Display temp, feels like, conditions, icon
+Display temp, feels like, conditions
 
 Carousel: Scroll left to Weather in the Past, Weather presently, scroll right to Weather in the future
 Mostly taken from: https://www.youtube.com/watch?v=gor5BvT2z88
@@ -20,14 +20,14 @@ Enter days? or pick date?
 Displays max and min temps, conditions, icon
 
 Scroll right for future forecast:
-Enter days (or date?)
+Enter days (or date?) --> Use one day future forecast
 Displays max and min temps, conditions, icon
 
 Friday: Watch youtube video on creating carousel pages
 Research adding video to background
 Select videos
 
-
+Button styling from W3schools.com (hover and transition)
 
 
 create index.html

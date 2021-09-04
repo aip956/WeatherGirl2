@@ -1,4 +1,7 @@
 
+
+
+
 .carousel {
     overflow: hidden;
     max-width: 1000px;
@@ -34,6 +37,17 @@
     border-radius: 50px;
     border: 0;
     font-weight: bold;
+    
+}
+
+.carousel .carousel_actions button:hover {
+    border-radius: 50px;
+    border: 0;
+    font-weight: bold;
+    background-color: black;
+    color: white;
+    transition: 0.7s;
+    
 }
 
 .carousel .carousel_actions button #carousel_button--prev {
@@ -54,7 +68,6 @@
     }
 
     .text {
-      
         color: #f2f2f2;
         font-size: 40px;
         position: absolute;
