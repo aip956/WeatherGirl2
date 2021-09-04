@@ -75,11 +75,11 @@ function handleGetDate(event) {
   event.preventDefault();
 
   if (!$input.val()) {
-    alert ("Please enter a city on the next slide and submit")
+    alert ("Please enter a city on the next")
   }
 
   if (!$inputdate.val()) {
-    alert ("Please enter a date and submit")
+    alert ("Please enter a date")
   }
 
   $.ajax({
@@ -107,6 +107,8 @@ function handleGetDate(event) {
 // Carousel Functions
 
 // 
+
+
 
 let slidePosition = 0;
 const slides = document.getElementsByClassName('carousel_item');
