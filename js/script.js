@@ -12,6 +12,7 @@ const $futuretempmin = $('#futuretempmin');
 const $futureindex = $('#futureindex');
 const $futuredesc = $('#futuredesc');
 const $inputdate = $('input[type="date"]');
+const $dateval=$('#dateval');
 
 const yesterday = () => {
   let d = new Date();
@@ -23,6 +24,10 @@ const yesterday = () => {
 // Current weather
 function handleGetData(event) {
   event.preventDefault();
+  
+  if (!$input.val()){
+    alert ("Please enter a city")
+  }
 
 $.ajax({
     url:`http://api.weatherapi.com/v1/current.json?key=94b59f94d0124a6cbe831027212608&q=${$input.val()}&aqi=no`
@@ -37,29 +42,7 @@ $.ajax({
    function(error){
     console.log("oops, something didn't work", error);
   }
-);}
-// Add event listener when clicked, run handleGetData
-    $('form').on('submit',handleGetData)
-   
-// Historical weather
-// http://api.weatherapi.com/v1/history.json?key=&q=dallas&dt=2010-01-01
-
-$.ajax({
-  url:`http://api.weatherapi.com/v1/history.json?key=94b59f94d0124a6cbe831027212608&q=dallas&dt=${$inputdate.val()}`
-}).then(
- function(data){
- console.log(data);
- $histtempmax.text(data.forecast.forecastday[0].day.maxtemp_f);
- $histtempmin.text(data.forecast.forecastday[0].day.mintemp_f);
- $histdesc.text(data.forecast.forecastday[0].day.condition.text);
- },
- 
- function(error){
-  console.log("oops, something didn't work", error);
-}
 )
-
-// Forecast
 $.ajax({
   url:`http://api.weatherapi.com/v1/forecast.json?key=94b59f94d0124a6cbe831027212608&q=${$input.val()}&days=5&aqi=no&alerts=no`
 }).then(
@@ -75,14 +58,55 @@ $.ajax({
   console.log("oops, something didn't work", error);
 }
 )
+;}
+// Add event listener when clicked, run handleGetData
+    $('form').on('submit',handleGetData)
+   
+    $dateval.on("click", handleGetDate) 
+    // When clicked, run handleGetDate
+
+// Historical weather
+// http://api.weatherapi.com/v1/history.json?key=94b59f94d0124a6cbe831027212608&q=dallas&dt=2021-09-02
+
+
+ 
+
+function handleGetDate(event) {
+  event.preventDefault();
+
+  if (!$input.val()) {
+    alert ("Please enter a city on the next slide and submit")
+  }
+
+  if (!$inputdate.val()) {
+    alert ("Please enter a date and submit")
+  }
+
+  $.ajax({
+    url:`http://api.weatherapi.com/v1/history.json?key=94b59f94d0124a6cbe831027212608&q=${$input.val()}&dt=${$inputdate.val()}`
+  }).then(
+   function(data){
+   console.log(data);
+   $histtempmax.text(data.forecast.forecastday[0].day.maxtemp_f);
+   $histtempmin.text(data.forecast.forecastday[0].day.mintemp_f);
+   $histdesc.text(data.forecast.forecastday[0].day.condition.text);
+   },
+   
+   function(error){
+    console.log("oops, something didn't work", error);
+  }
+  )
+}
+
+
+// Forecast
+
 /////////////////////////////////////////////////////////
 
 
 // Carousel Functions
 
 // 
-
-
 
 let slidePosition = 0;
 const slides = document.getElementsByClassName('carousel_item');
