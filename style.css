@@ -7,6 +7,12 @@ body {
   text-align: center;
 }
 
+.container {
+    display: flex; 
+    justify-content: center;
+}
+
+
 .text {
     color: #f2f2f2;
     font-size: 40px;
@@ -78,7 +84,7 @@ body {
     border-radius: 50px;
     border: 0;
     font-weight: bold;
-    background-color:#98D2BF;
+    background-color:#748881;
     
 }
 

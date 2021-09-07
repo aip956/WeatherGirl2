@@ -43,6 +43,7 @@ $.ajax({
     console.log("oops, something didn't work", error);
   }
 )
+// Forecast
 $.ajax({
   url:`http://api.weatherapi.com/v1/forecast.json?key=94b59f94d0124a6cbe831027212608&q=${$input.val()}&days=5&aqi=no&alerts=no`
 }).then(
@@ -75,7 +76,7 @@ function handleGetDate(event) {
   event.preventDefault();
 
   if (!$input.val()) {
-    alert ("Please enter a city on the next")
+    alert ("Please enter a city on the next slide")
   }
 
   if (!$inputdate.val()) {
@@ -94,12 +95,13 @@ function handleGetDate(event) {
    
    function(error){
     console.log("oops, something didn't work", error);
+    alert ("Something went wrong; did you pick a date before 6 days ago?")
   }
   )
 }
 
 
-// Forecast
+
 
 /////////////////////////////////////////////////////////
 
