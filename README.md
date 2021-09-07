@@ -1,5 +1,11 @@
 I had trouble with my git repository, so there are two repos. There is also a gap in saving my work to my repo. I had intended originally for my backgrounds to be mp4s, but these were too large. I had deployed to my original git "WeatherGirl". As I added more functionality, I was unable to save my work. I deleted the mp4 files from my VS Code, but the repository already had the mp4s and would not save my work. Alex recommended I create another repo, and it's now WeatherGirl2.
 
+Current: http://api.weatherapi.com/v1/current.json?key=94b59f94d0124a6cbe831027212608&q=New York&aqi=no
+Forecast: http://api.weatherapi.com/v1/forecast.json?key=94b59f94d0124a6cbe831027212608&q=New York&days=5&aqi=no&alerts=no
+History: http://api.weatherapi.com/v1/history.json?key=94b59f94d0124a6cbe831027212608&q=New York&dt=2021-08-22
+
+
+To do:
 Create basic function
 API from Weather API
 Current endpoint: Works; checked in ajax and live server
@@ -11,97 +17,47 @@ video background --> Could not save with mp4s, so needed to use jpegs
 Nice font: Raleway
 Add city in center page? Carries to other pages?
 Display temp, feels like, conditions
+Button styling from W3schools.com (hover and transition)
 
-Carousel: Scroll left to Weather in the Past, Weather presently, scroll right to Weather in the future
-Mostly taken from: https://www.youtube.com/watch?v=gor5BvT2z88
 
 Scroll left for historical forecast:
-Enter days? or pick date?
-Displays max and min temps, conditions, icon
+Enter date
+Displays max and min temps, conditions
 
 Scroll right for future forecast:
-Enter days (or date?) --> Use one day future forecast
-Displays max and min temps, conditions, icon
+Use one day future forecast
+Displays max and min temps, conditions
 
 Friday: Watch youtube video on creating carousel pages
 Research adding video to background
 Select videos
 
-Button styling from W3schools.com (hover and transition)
+Carousels: https://www.youtube.com/watch?v=gor5BvT2z88&t=165s
+
+For carousel input:
+In HTML:
+Create div classes:
+Carousel
+Carousel_item (for each slide)
+Carousel_item—visible (for the slide that’s visible)
+Carousel_actions (for the prev and next buttons)
 
 
-create index.html
-Body: 
-div class="carousel"
-div class="carousel_item"
-<img src="image1">
-div class="carousel_item"
-<img src="image2">
-div class="carousel_item"
-<img src="image3">
+In JS:
+Constants slidePosition, slides, and totalSlides
+Event listener on the next button, calls function moveToNextSlide;
+Event listener on the prev button, calls function moveToPrevSlide;
+Function updateSlidePosition: for each slide, remove the visible slide, add hidden
+Function moveToNextSlide: 
+if slidePosition is (totalSlides - 1), slidePosition is 0; 
+else slidePosition add 1, updateSlidePosition
+Function moveToPrevSlide: 
+if slidePosition is 0, slidePosition is (totalSlides - 1); 
+else slidePosition minus 1, updateSlidePosition
 
-div class="carousel_actions"
-button id="Next", next slide, aria label
-button id="Previous", previous slide
-
-script src=app.js
-
-In CSS
-.carousel {
-    overflow: hidden;
-    max-width: 1000px or 600px
-    position: relative;
-}
-
-.carousel .carousel_item,
-.carousel .carousel_item_hidden{
-    display: none;
-}
-
-.carousel .carousel_item img {
-      width: 100%
-      max-width: 600px;
-    height: auto;
-}
-
-.carousel .carousel_item_visible {
-    display: block;
-}
-
-//actions
-.carousel .carousel_actions {
-    display: flex
-    width: 100%
-    justify-content: space-between
-    position: absolute;
-    top: 50%
-    transform: translateY(-50%)
-} 
-
-.carousel .carousel_actions button {
-    border-radius: 50px;
-    border: 0;
-    font-weight: bold;
-    cursor: pointer;
-    width: 40px;
-    height: 40px;
-}
-
-.carousel .carousel_actions button#carousel_button_prev {
-    margin-left: 20px
-}
-
-.carousel .carousel_actions button#carousel_button_next {
-    margin-left: 20px
-}
-
-In JS
-let slidePosition=0;
-const slides = document.getelementbyclassnyame("carousel_item")
-const totalslides = slides.length
-
-
-document.getelementbyid("carousel_button-next")
-.addeventlistner("click",function(){
-    updateSlidePosition()
-})
+In CSS:
+.carousel
+.carousel_item: display: none
+.carousel_item—hidden: display: none
+.carousel_item—visible: fade animation
+animation: fadeVisbility

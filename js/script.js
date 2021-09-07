@@ -14,11 +14,6 @@ const $futuredesc = $('#futuredesc');
 const $inputdate = $('input[type="date"]');
 const $dateval=$('#dateval');
 
-const yesterday = () => {
-  let d = new Date();
-  d.setDate(d.getDate() - 1);
-  return d.toISOString().split('T')[0];
-};
 
 
 // Current weather
@@ -101,16 +96,12 @@ function handleGetDate(event) {
 }
 
 
-
-
 /////////////////////////////////////////////////////////
 
 
 // Carousel Functions
 
 // 
-
-
 
 let slidePosition = 0;
 const slides = document.getElementsByClassName('carousel_item');
@@ -161,8 +152,3 @@ updateSlidePosition();
 
 
 
-//  $temp.text(data.forecast.forecastday[0].day.maxtemp_f)
-//    $temp.text(data.forecast.forecastday[0].day.maxtemp_f)
-//    $index.text(data.current.feelslike_f);
-//    weatherData = data;
-//    render();
