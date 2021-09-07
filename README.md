@@ -1,5 +1,16 @@
 I had trouble with my git repository, so there are two repos. There is also a gap in saving my work to my repo. I had intended originally for my backgrounds to be mp4s, but these were too large. I had deployed to my original git "WeatherGirl". As I added more functionality, I was unable to save my work. I deleted the mp4 files from my VS Code, but the repository already had the mp4s and would not save my work. Alex recommended I create another repo, and it's now WeatherGirl2.
 
+Technologies Used
+HTML 
+CSS
+JavaScript
+jQuery
+AJAX
+Google Fonts
+Weather API
+Photos from Unsplash.com
+
+
 Current: http://api.weatherapi.com/v1/current.json?key=94b59f94d0124a6cbe831027212608&q=New York&aqi=no
 Forecast: http://api.weatherapi.com/v1/forecast.json?key=94b59f94d0124a6cbe831027212608&q=New York&days=5&aqi=no&alerts=no
 History: http://api.weatherapi.com/v1/history.json?key=94b59f94d0124a6cbe831027212608&q=New York&dt=2021-08-22
