@@ -5,11 +5,14 @@ body {
   background-color:#98D2BF;
   font-family: "Raleway", sans-serif;
   text-align: center;
+
 }
 
 .container {
     display: flex; 
     justify-content: center;
+    align-items: center;
+   min-height: 80vh;
 }
 
 

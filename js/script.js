@@ -90,7 +90,7 @@ function handleGetDate(event) {
    
    function(error){
     console.log("oops, something didn't work", error);
-    alert ("Something went wrong; did you pick a date before 6 days ago?")
+    alert ("Something went wrong; is your date later than 6 days ago?")
   }
   )
 }
