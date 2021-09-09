@@ -11,9 +11,9 @@ Weather API
 Photos from Unsplash.com
 
 
-Current: http://api.weatherapi.com/v1/current.json?key=94b59f94d0124a6cbe831027212608&q=New York&aqi=no
-Forecast: http://api.weatherapi.com/v1/forecast.json?key=94b59f94d0124a6cbe831027212608&q=New York&days=5&aqi=no&alerts=no
-History: http://api.weatherapi.com/v1/history.json?key=94b59f94d0124a6cbe831027212608&q=New York&dt=2021-08-22
+Current: https://api.weatherapi.com/v1/current.json?key=94b59f94d0124a6cbe831027212608&q=New York&aqi=no
+Forecast: https://api.weatherapi.com/v1/forecast.json?key=94b59f94d0124a6cbe831027212608&q=New York&days=5&aqi=no&alerts=no
+History: https://api.weatherapi.com/v1/history.json?key=94b59f94d0124a6cbe831027212608&q=New York&dt=2021-08-22
 
 
 To do:

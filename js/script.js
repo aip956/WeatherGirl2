@@ -20,12 +20,13 @@ const $dateval=$('#dateval');
 function handleGetData(event) {
   event.preventDefault();
   
+  
   if (!$input.val()){
     alert ("Please enter a city")
   }
 
 $.ajax({
-    url:`http://api.weatherapi.com/v1/current.json?key=94b59f94d0124a6cbe831027212608&q=${$input.val()}&aqi=no`
+    url:`https://api.weatherapi.com/v1/current.json?key=94b59f94d0124a6cbe831027212608&q=${$input.val()}&aqi=no`
 }).then(
    function(data){
    console.log(data);
@@ -40,7 +41,7 @@ $.ajax({
 )
 // Forecast
 $.ajax({
-  url:`http://api.weatherapi.com/v1/forecast.json?key=94b59f94d0124a6cbe831027212608&q=${$input.val()}&days=5&aqi=no&alerts=no`
+  url:`https://api.weatherapi.com/v1/forecast.json?key=94b59f94d0124a6cbe831027212608&q=${$input.val()}&days=5&aqi=no&alerts=no`
 }).then(
  function(data){
  console.log(data);
@@ -79,7 +80,7 @@ function handleGetDate(event) {
   }
 
   $.ajax({
-    url:`http://api.weatherapi.com/v1/history.json?key=94b59f94d0124a6cbe831027212608&q=${$input.val()}&dt=${$inputdate.val()}`
+    url:`https://api.weatherapi.com/v1/history.json?key=94b59f94d0124a6cbe831027212608&q=${$input.val()}&dt=${$inputdate.val()}`
   }).then(
    function(data){
    console.log(data);
